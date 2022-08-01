@@ -1,7 +1,5 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const ejs = require('ejs');
-const path = require('path');
 const BlogPost = require('./models/BlogPost');
 
 const app = express();
