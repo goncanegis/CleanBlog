@@ -21,9 +21,6 @@ app.use(express.json());
 // Routes
 app.get('/', async (req, res) => {
   const posts = await BlogPost.find({});
-  posts.map((post) => {
-    console.log(post.title);
-  });
   res.render('index', { posts });
 });
 
@@ -36,6 +33,10 @@ app.get('/add-post', (req, res) => {
 app.post('/post', async (req, res) => {
   await BlogPost.create(req.body);
   res.redirect('/');
+});
+app.get('/post/:id', async (req, res) => {
+  const post = await BlogPost.findById(req.params.id);
+  res.render('post', { post });
 });
 
 app.listen(PORT, () => {

@@ -27,7 +27,7 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <% posts.map(post => {  %>
         <div class="post-preview">
-          <a href="post.html">
+          <a href="post/<%= post._id %>">
             <h2 class="post-title">
               <%= post.title %>
             </h2>
