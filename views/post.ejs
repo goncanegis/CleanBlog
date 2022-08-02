@@ -23,6 +23,17 @@
               on <%= post.dateCreated.toLocaleString('tr-TR') %></span>
           </div>
         </div>
+        <div class="col-xl-8 col-lg-10 mx-auto">
+          <!-- Share box -->
+          <div class="d-flex align-items-center">
+            <div class="text-center">
+              <a href="/post/edit/<%= post._id %>" class="btn btn-primary p-3 mb-4 mr-3 tm-btn-animate tm-btn-download tm-icon-download"><span>Update Post</span></a>
+            </div>
+            <div class="text-center">
+              <a href="/post/<%= post._id %>?_method=DELETE" onclick="return confirm('Are you sure?')" class="btn btn-danger p-3 mb-4 tm-btn-animate tm-btn-download tm-icon-download"><span>Delete Post</span></a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
