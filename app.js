@@ -4,11 +4,15 @@ const methodOverride = require('method-override');
 const pageController = require('./controllers/pageController');
 const postController = require('./controllers/postController');
 
+require('dotenv').config();
+
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/blog_posts');
+mongoose.connect(
+  `mongodb+srv://${process.env.USER_ID}:${process.env.USER_KEY}@cluster0.upamrm0.mongodb.net/?retryWrites=true&w=majority`
+);
 
 // Template engine
 app.set('view engine', 'ejs');
